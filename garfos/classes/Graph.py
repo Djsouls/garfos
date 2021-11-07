@@ -1,21 +1,6 @@
-from typing import Union, Hashable
+from typing import Hashable
 
-class Vertex:
-    pass
-
-class Vertex:
-    def __init__(self, label: Hashable):
-        self.label: Hashable = label
-        self.neighbors: dict[Vertex, int] = dict()
-
-    def add_neighbor(self, v: Vertex, weight: int = 1):
-        self.neighbors[v] = weight
-
-    def get_neighbors(self):
-        return self.neighbors.keys()
-
-    def degree(self):
-        return len(self.neighbors)
+from garfos.classes.Vertex import Vertex
 
 class Graph:
     def __init__(self):
@@ -32,7 +17,6 @@ class Graph:
             return self.vertices[v]
 
         v1 = Vertex(v)
-
         self.vertices[v] = v1
 
         return v1
