@@ -1,4 +1,4 @@
-from typing import Hashable
+from typing import List, Hashable
 
 from garfos.classes.Vertex import Vertex
 
@@ -12,7 +12,7 @@ class Graph:
 
         self.connect(v1, v2, weight)
 
-    def add_vertex(self, v: Hashable):
+    def add_vertex(self, v: Hashable) -> Vertex:
         if v in self.vertices:
             return self.vertices[v]
 
@@ -25,5 +25,5 @@ class Graph:
         v1.add_neighbor(v2, weight)
         v2.add_neighbor(v1, weight)
 
-    def neighbors(self, v: Hashable):
+    def neighbors(self, v: Hashable) -> List[Vertex]:
         return self.vertices[v].get_neighbors()
